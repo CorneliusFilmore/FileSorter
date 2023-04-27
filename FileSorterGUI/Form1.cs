@@ -26,7 +26,7 @@ namespace FileSorterGUI
 
         private void AddFilter_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

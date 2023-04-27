@@ -30,15 +30,14 @@
         {
             SortButton = new Button();
             FileFiltersList = new ListView();
+            DirectoryName = new ColumnHeader();
+            FileFilters = new ColumnHeader();
             label1 = new Label();
             AddFilter = new Button();
-            openFileDialog1 = new OpenFileDialog();
             FilePathBox = new TextBox();
             ChoosePathButton = new Button();
             EditFilterButton = new Button();
             DeleteFilterButton = new Button();
-            DirectoryName = new ColumnHeader();
-            FileFilters = new ColumnHeader();
             SuspendLayout();
             // 
             // SortButton
@@ -61,6 +60,14 @@
             FileFiltersList.TabIndex = 1;
             FileFiltersList.UseCompatibleStateImageBehavior = false;
             // 
+            // DirectoryName
+            // 
+            DirectoryName.Text = "Directory Name";
+            // 
+            // FileFilters
+            // 
+            FileFilters.Text = "File Filters";
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -82,10 +89,6 @@
             AddFilter.Text = "Add filter";
             AddFilter.UseVisualStyleBackColor = true;
             AddFilter.Click += AddFilter_Click;
-            // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
             // 
             // FilePathBox
             // 
@@ -129,14 +132,6 @@
             DeleteFilterButton.Text = "Delete Filter";
             DeleteFilterButton.UseVisualStyleBackColor = true;
             // 
-            // DirectoryName
-            // 
-            DirectoryName.Text = "Directory Name";
-            // 
-            // FileFilters
-            // 
-            FileFilters.Text = "File Filters";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -162,7 +157,6 @@
         private ListView FileFiltersList;
         private Label label1;
         private Button AddFilter;
-        private OpenFileDialog openFileDialog1;
         private TextBox FilePathBox;
         private Button ChoosePathButton;
         private Button EditFilterButton;
