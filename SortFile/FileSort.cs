@@ -6,31 +6,35 @@ namespace SortFile
     {
         public void Sort(string path,List<CustomFileType> fileTypes)
         {
-            foreach (CustomFileType fileType in fileTypes)
+            List<string> files = Directory.GetFiles(path).ToList();
+
+            try
             {
-                string directoryPath = $"{path}{Path.DirectorySeparatorChar}{fileType.DirectoryName}";
-                
-                if (!Directory.Exists(directoryPath)) 
-                {
-                   Directory.CreateDirectory(directoryPath);
-                }
-
-                List<string> files = Directory.GetFiles(path).ToList();
-
-                foreach (string file in files)
+                Parallel.ForEach(files, file =>
                 {
                     string fileWithoutExt = Path.GetExtension(file);
 
-                    foreach(string ext in fileType.Extenstions)
+                    foreach (CustomFileType fileType in fileTypes)
                     {
-                        if(fileWithoutExt ==  ext)
+                        if (fileType.Extenstions.Contains(fileWithoutExt))
                         {
+                            string directoryPath = $"{path}{Path.DirectorySeparatorChar}{fileType.DirectoryName}";
+
+                            if (!Directory.Exists(directoryPath))
+                            {
+                                Directory.CreateDirectory(directoryPath);
+                            }
+
                             File.Move(file, $"{directoryPath}{Path.DirectorySeparatorChar}{Path.GetFileName(file)}");
                         }
                     }
-
-                }
+                });
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
         }
     }
 }
