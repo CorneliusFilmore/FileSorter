@@ -1,6 +1,6 @@
 ﻿namespace FileSorterGUI
 {
-    partial class Form1
+    partial class MainSorterWidnow
     {
         /// <summary>
         ///  Required designer variable.
@@ -145,7 +145,7 @@
             Controls.Add(label1);
             Controls.Add(FileFiltersList);
             Controls.Add(SortButton);
-            Name = "Form1";
+            Name = "MainSorterWidnow";
             Text = "FileSorter";
             ResumeLayout(false);
             PerformLayout();

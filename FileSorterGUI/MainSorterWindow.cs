@@ -2,11 +2,11 @@ using FileSorter;
 
 namespace FileSorterGUI
 {
-    public partial class Form1 : Form
+    public partial class MainSorterWidnow : Form
     {
         private string _directoryPath;
         private List<CustomFileType> _fileFilters;
-        public Form1()
+        public MainSorterWidnow()
         {
             _fileFilters = new List<CustomFileType>();
             InitializeComponent();
@@ -26,7 +26,9 @@ namespace FileSorterGUI
 
         private void AddFilter_Click(object sender, EventArgs e)
         {
+            var fileFilter = new AddFilterDialog();
 
+            fileFilter.ShowDialog();
         }
     }
 }
