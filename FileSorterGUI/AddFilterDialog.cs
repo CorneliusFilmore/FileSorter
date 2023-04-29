@@ -30,7 +30,7 @@ namespace FileSorterGUI
 
         private void FilterNameBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char) Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 CheckFilter();
             }
@@ -61,6 +61,11 @@ namespace FileSorterGUI
                 MessageBox.Show("Incorrect exntension", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 FilterNameBox.Text = string.Empty;
             }
+        }
+
+        private void AddMainFilterButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

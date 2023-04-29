@@ -114,6 +114,7 @@
             AddMainFilterButton.TabIndex = 6;
             AddMainFilterButton.Text = "AddFilter";
             AddMainFilterButton.UseVisualStyleBackColor = true;
+            AddMainFilterButton.Click += AddMainFilterButton_Click;
             // 
             // AddFilterDialog
             // 
