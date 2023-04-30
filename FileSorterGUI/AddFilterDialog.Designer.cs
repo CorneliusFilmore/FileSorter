@@ -36,6 +36,7 @@
             FilterNameBox = new TextBox();
             AddFilterToListButton = new Button();
             AddMainFilterButton = new Button();
+            DeleteFilterButton = new Button();
             SuspendLayout();
             // 
             // ListOfFilters
@@ -90,16 +91,16 @@
             FilterNameBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             FilterNameBox.Location = new Point(12, 338);
             FilterNameBox.Name = "FilterNameBox";
-            FilterNameBox.Size = new Size(210, 23);
+            FilterNameBox.Size = new Size(213, 23);
             FilterNameBox.TabIndex = 4;
             FilterNameBox.KeyPress += FilterNameBox_KeyPress;
             // 
             // AddFilterToListButton
             // 
             AddFilterToListButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            AddFilterToListButton.Location = new Point(246, 338);
+            AddFilterToListButton.Location = new Point(231, 337);
             AddFilterToListButton.Name = "AddFilterToListButton";
-            AddFilterToListButton.Size = new Size(145, 23);
+            AddFilterToListButton.Size = new Size(75, 23);
             AddFilterToListButton.TabIndex = 5;
             AddFilterToListButton.Text = "Add Filter";
             AddFilterToListButton.UseVisualStyleBackColor = true;
@@ -112,15 +113,26 @@
             AddMainFilterButton.Name = "AddMainFilterButton";
             AddMainFilterButton.Size = new Size(379, 46);
             AddMainFilterButton.TabIndex = 6;
-            AddMainFilterButton.Text = "AddFilter";
+            AddMainFilterButton.Text = "Add Filter";
             AddMainFilterButton.UseVisualStyleBackColor = true;
             AddMainFilterButton.Click += AddMainFilterButton_Click;
+            // 
+            // DeleteFilterButton
+            // 
+            DeleteFilterButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteFilterButton.Location = new Point(312, 337);
+            DeleteFilterButton.Name = "DeleteFilterButton";
+            DeleteFilterButton.Size = new Size(79, 23);
+            DeleteFilterButton.TabIndex = 7;
+            DeleteFilterButton.Text = "Delete FIlter";
+            DeleteFilterButton.UseVisualStyleBackColor = true;
             // 
             // AddFilterDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(403, 450);
+            Controls.Add(DeleteFilterButton);
             Controls.Add(AddMainFilterButton);
             Controls.Add(AddFilterToListButton);
             Controls.Add(FilterNameBox);
@@ -144,5 +156,6 @@
         private Button AddFilterToListButton;
         private Button AddMainFilterButton;
         private ColumnHeader Filters;
+        private Button DeleteFilterButton;
     }
 }

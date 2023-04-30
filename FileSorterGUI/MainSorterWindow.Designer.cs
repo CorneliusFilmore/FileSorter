@@ -49,6 +49,7 @@
             SortButton.TabIndex = 0;
             SortButton.Text = "Sort";
             SortButton.UseVisualStyleBackColor = true;
+            SortButton.Click += SortButton_Click;
             // 
             // FileFiltersList
             // 
@@ -63,10 +64,12 @@
             // DirectoryName
             // 
             DirectoryName.Text = "Directory Name";
+            DirectoryName.Width = 160;
             // 
             // FileFilters
             // 
             FileFilters.Text = "File Filters";
+            FileFilters.Width = 800;
             // 
             // label1
             // 
@@ -132,7 +135,7 @@
             DeleteFilterButton.Text = "Delete Filter";
             DeleteFilterButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // MainSorterWidnow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;

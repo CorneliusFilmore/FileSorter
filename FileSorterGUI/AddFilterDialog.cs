@@ -14,8 +14,8 @@ namespace FileSorterGUI
 {
     public partial class AddFilterDialog : Form
     {
-        private string _directoryName;
-        private List<string> _extentionList = new();
+        public string _directoryName;
+        public List<string> _extentionList = new();
         public AddFilterDialog()
         {
             InitializeComponent();
@@ -35,6 +35,30 @@ namespace FileSorterGUI
                 CheckFilter();
             }
         }
+        private void AddMainFilterButton_Click(object sender, EventArgs e)
+        {
+
+            if (DirectoryNameBox.Text != string.Empty)
+            {
+                if (DirectoryNameBox.Text.Any(Char.IsWhiteSpace))
+                {
+                    MessageBox.Show("The Name of dricetory can't contain spacebars", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (ListOfFilters.Items.Count == 0)
+                {
+                    MessageBox.Show("You have to have at least one filter", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    _directoryName = DirectoryNameBox.Text;
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("The Name of dricetory can't be empty", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void CheckFilter()
         {
@@ -47,6 +71,7 @@ namespace FileSorterGUI
                     ListOfFilters.Items.Add(FilterNameBox.Text);
                     _extentionList.Add(FilterNameBox.Text);
                     ListOfFilters.Refresh();
+                    FilterNameBox.Text = string.Empty;
                 }
                 else
                 {
@@ -63,9 +88,6 @@ namespace FileSorterGUI
             }
         }
 
-        private void AddMainFilterButton_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
