@@ -88,6 +88,19 @@ namespace FileSorterGUI
             }
         }
 
-
+        private void DeleteFilterButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show($"Are you sure you want to delte selecetd filters", "WARNING!", MessageBoxButtons.YesNo);
+            
+            if (result == DialogResult.Yes)
+            {
+                foreach (ListViewItem item in ListOfFilters.SelectedItems)
+                {
+                    ListOfFilters.Items.Remove(item);
+                    _extentionList.Remove(item.Text);
+                }
+            }
+            
+        }
     }
 }

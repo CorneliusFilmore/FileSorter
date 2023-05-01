@@ -126,6 +126,7 @@
             DeleteFilterButton.TabIndex = 7;
             DeleteFilterButton.Text = "Delete FIlter";
             DeleteFilterButton.UseVisualStyleBackColor = true;
+            DeleteFilterButton.Click += DeleteFilterButton_Click;
             // 
             // AddFilterDialog
             // 
