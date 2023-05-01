@@ -124,6 +124,7 @@
             EditFilterButton.TabIndex = 6;
             EditFilterButton.Text = "Edit Filter";
             EditFilterButton.UseVisualStyleBackColor = true;
+            EditFilterButton.Click += EditFilterButton_Click;
             // 
             // DeleteFilterButton
             // 
@@ -134,6 +135,7 @@
             DeleteFilterButton.TabIndex = 7;
             DeleteFilterButton.Text = "Delete Filter";
             DeleteFilterButton.UseVisualStyleBackColor = true;
+            DeleteFilterButton.Click += DeleteFilterButton_Click;
             // 
             // MainSorterWidnow
             // 

@@ -71,9 +71,27 @@ namespace FileSorterGUI
         {
             CustomFileSort customFileSort = new CustomFileSort();
 
-           
-            customFileSort.Sort(_directoryPath,_fileFilters);
-            
+
+            customFileSort.Sort(_directoryPath, _fileFilters);
+
+        }
+
+        private void EditFilterButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteFilterButton_Click(object sender, EventArgs e)
+        {
+            var selectedItems = FileFiltersList.SelectedItems;
+
+            foreach (ListViewItem item in selectedItems)
+            {
+                FileFiltersList.Items.Remove(item);
+                _fileFilters.RemoveAll(x => x.DirectoryName == item.Text);
+            }
+
+            var a = _fileFilters;
         }
     }
 }
