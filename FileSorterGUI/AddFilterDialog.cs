@@ -63,7 +63,7 @@ namespace FileSorterGUI
         }
 
         private void CheckFilter()
-        { 
+        {
             Regex regex = new("^[.][a-zA-Z0-9]+$");
 
             if (regex.IsMatch(FilterNameBox.Text))
@@ -103,7 +103,7 @@ namespace FileSorterGUI
         private void DeleteFilterButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show($"Are you sure you want to delte selecetd filters", "WARNING!", MessageBoxButtons.YesNo);
-            
+
             if (result == DialogResult.Yes)
             {
                 foreach (ListViewItem item in ListOfFilters.SelectedItems)
@@ -112,7 +112,7 @@ namespace FileSorterGUI
                     _extentionList.Remove(item.Text);
                 }
             }
-            
+
         }
     }
 }

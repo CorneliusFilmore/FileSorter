@@ -84,7 +84,7 @@
             // 
             // AddFilter
             // 
-            AddFilter.Anchor = AnchorStyles.Right;
+            AddFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             AddFilter.Location = new Point(890, 57);
             AddFilter.Name = "AddFilter";
             AddFilter.Size = new Size(145, 35);
@@ -117,7 +117,7 @@
             // 
             // EditFilterButton
             // 
-            EditFilterButton.Anchor = AnchorStyles.Right;
+            EditFilterButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             EditFilterButton.Location = new Point(890, 98);
             EditFilterButton.Name = "EditFilterButton";
             EditFilterButton.Size = new Size(145, 35);
@@ -128,7 +128,7 @@
             // 
             // DeleteFilterButton
             // 
-            DeleteFilterButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteFilterButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DeleteFilterButton.Location = new Point(890, 139);
             DeleteFilterButton.Name = "DeleteFilterButton";
             DeleteFilterButton.Size = new Size(145, 35);

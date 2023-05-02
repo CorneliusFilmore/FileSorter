@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFilterDialog));
             ListOfFilters = new ListView();
             Filters = new ColumnHeader();
             label1 = new Label();
@@ -141,6 +142,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(ListOfFilters);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddFilterDialog";
             Text = "AddFilterDialog";
             ResumeLayout(false);

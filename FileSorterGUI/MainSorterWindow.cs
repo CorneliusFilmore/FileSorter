@@ -104,7 +104,7 @@ namespace FileSorterGUI
                 var updateObject = _fileFilters.FirstOrDefault(x => x.DirectoryName == listViewItem.Text);
 
                 updateObject.Extenstions = addFilterDialog._extentionList;
-                
+
 
                 FileFiltersList.Refresh();
             }
