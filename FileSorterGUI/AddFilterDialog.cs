@@ -51,8 +51,6 @@ namespace FileSorterGUI
                 {
                     _directoryName = DirectoryNameBox.Text;
 
-                    var test = _extentionList;
-
                     this.Close();
                 }
             }

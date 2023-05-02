@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainSorterWidnow));
             SortButton = new Button();
             FileFiltersList = new ListView();
             DirectoryName = new ColumnHeader();
@@ -150,6 +151,7 @@
             Controls.Add(label1);
             Controls.Add(FileFiltersList);
             Controls.Add(SortButton);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainSorterWidnow";
             Text = "FileSorter";
             ResumeLayout(false);
