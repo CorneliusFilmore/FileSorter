@@ -16,6 +16,8 @@ namespace SortFile
 
                     foreach (CustomFileType fileType in fileTypes)
                     {
+                        var b = fileType.Extenstions.Contains(fileWithoutExt);
+                        var a = fileWithoutExt;
                         if (fileType.Extenstions.Contains(fileWithoutExt))
                         {
                             string directoryPath = $"{path}{Path.DirectorySeparatorChar}{fileType.DirectoryName}";

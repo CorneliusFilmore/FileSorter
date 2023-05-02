@@ -1,6 +1,6 @@
 using FileSorter;
 using SortFile;
-using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace FileSorterGUI
@@ -78,7 +78,36 @@ namespace FileSorterGUI
 
         private void EditFilterButton_Click(object sender, EventArgs e)
         {
+            if (FileFiltersList.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("You can edit only one position", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                AddFilterDialog addFilterDialog = new AddFilterDialog();
+                ListViewItem listViewItem = FileFiltersList.SelectedItems[0];
 
+                addFilterDialog._directoryName = listViewItem.Text;
+                addFilterDialog._extentionList = listViewItem.SubItems[1].Text.Split(",").ToList();
+
+                addFilterDialog.UpdateData();
+                addFilterDialog.ShowDialog();
+
+                listViewItem.Text = addFilterDialog._directoryName;
+
+                string extensions = string.Join(",", addFilterDialog._extentionList);
+
+                listViewItem.SubItems[1].Text = extensions;
+
+                addFilterDialog._extentionList = extensions.Split(",").ToList();
+
+                var updateObject = _fileFilters.FirstOrDefault(x => x.DirectoryName == listViewItem.Text);
+
+                updateObject.Extenstions = addFilterDialog._extentionList;
+                
+
+                FileFiltersList.Refresh();
+            }
         }
 
         private void DeleteFilterButton_Click(object sender, EventArgs e)
@@ -90,8 +119,6 @@ namespace FileSorterGUI
                 FileFiltersList.Items.Remove(item);
                 _fileFilters.RemoveAll(x => x.DirectoryName == item.Text);
             }
-
-            var a = _fileFilters;
         }
     }
 }

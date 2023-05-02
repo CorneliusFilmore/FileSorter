@@ -37,7 +37,6 @@ namespace FileSorterGUI
         }
         private void AddMainFilterButton_Click(object sender, EventArgs e)
         {
-
             if (DirectoryNameBox.Text != string.Empty)
             {
                 if (DirectoryNameBox.Text.Any(Char.IsWhiteSpace))
@@ -51,6 +50,9 @@ namespace FileSorterGUI
                 else
                 {
                     _directoryName = DirectoryNameBox.Text;
+
+                    var test = _extentionList;
+
                     this.Close();
                 }
             }
@@ -61,7 +63,7 @@ namespace FileSorterGUI
         }
 
         private void CheckFilter()
-        {
+        { 
             Regex regex = new("^[.][a-zA-Z0-9]+$");
 
             if (regex.IsMatch(FilterNameBox.Text))
@@ -85,6 +87,16 @@ namespace FileSorterGUI
             {
                 MessageBox.Show("Incorrect exntension", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 FilterNameBox.Text = string.Empty;
+            }
+        }
+
+        public void UpdateData()
+        {
+            DirectoryNameBox.Text = _directoryName;
+
+            foreach (string filter in _extentionList)
+            {
+                ListOfFilters.Items.Add(filter);
             }
         }
 
