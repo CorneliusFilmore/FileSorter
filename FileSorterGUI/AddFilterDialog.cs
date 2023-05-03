@@ -41,11 +41,11 @@ namespace FileSorterGUI
             {
                 if (DirectoryNameBox.Text.Any(Char.IsWhiteSpace))
                 {
-                    MessageBox.Show("The Name of dricetory can't contain spacebars", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The name of directory can't contain spaces!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (ListOfFilters.Items.Count == 0)
                 {
-                    MessageBox.Show("You have to have at least one filter", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You have to have at least one filter!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace FileSorterGUI
             }
             else
             {
-                MessageBox.Show("The Name of dricetory can't be empty", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The name of directory can't be empty!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -75,7 +75,7 @@ namespace FileSorterGUI
                 }
                 else
                 {
-                    string message = $"The extenstion \"{FilterNameBox.Text}\" is aleready added!";
+                    string message = $"The extension \"{FilterNameBox.Text}\" is aleready added!";
 
                     MessageBox.Show(message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     FilterNameBox.Text = string.Empty;
@@ -83,7 +83,7 @@ namespace FileSorterGUI
             }
             else
             {
-                MessageBox.Show("Incorrect exntension", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Incorrect extension!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 FilterNameBox.Text = string.Empty;
             }
         }
@@ -100,7 +100,7 @@ namespace FileSorterGUI
 
         private void DeleteFilterButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"Are you sure you want to delte selecetd filters", "WARNING!", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete selected filters?", "WARNING!", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
