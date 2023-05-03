@@ -2,6 +2,8 @@
 	
 FileSorter is a simple .NET WinForms application that sorts files in a directory into subdirectories based on their file extensions. This is a useful tool for organizing large collections of files that are cluttered and difficult to navigate.
 
+![The Main Window of the APP](images/MainWindow.png)
+
 ## Features
    - Sorts files in a directory into subdirectories based on their file extensions
    - User-friendly interface for selecting a folder to sort.
