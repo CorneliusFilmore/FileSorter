@@ -21,6 +21,7 @@ namespace FileSorterGUI
             InitializeComponent();
             ListOfFilters.View = View.Details;
             ListOfFilters.Scrollable = true;
+            //comment
         }
 
         private void AddFilterToListButton_Click(object sender, EventArgs e)
